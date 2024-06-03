@@ -6,19 +6,20 @@ part of 'product.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Product _$$_ProductFromJson(Map<String, dynamic> json) => _$_Product(
+_$ProductImpl _$$ProductImplFromJson(Map<String, dynamic> json) =>
+    _$ProductImpl(
       docId: json['docId'] as String?,
       title: json['title'] as String?,
       description: json['description'] as String?,
-      price: json['price'] as int?,
+      price: (json['price'] as num?)?.toInt(),
       isSale: json['isSale'] as bool?,
-      stock: json['stock'] as int?,
+      stock: (json['stock'] as num?)?.toInt(),
       saleRate: (json['saleRate'] as num?)?.toDouble(),
       imgUrl: json['imgUrl'] as String?,
-      timestamp: json['timestamp'] as int?,
+      timestamp: (json['timestamp'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$_ProductToJson(_$_Product instance) =>
+Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) =>
     <String, dynamic>{
       'docId': instance.docId,
       'title': instance.title,
@@ -31,18 +32,19 @@ Map<String, dynamic> _$$_ProductToJson(_$_Product instance) =>
       'timestamp': instance.timestamp,
     };
 
-_$_Cart _$$_CartFromJson(Map<String, dynamic> json) => _$_Cart(
+_$CartImpl _$$CartImplFromJson(Map<String, dynamic> json) => _$CartImpl(
       cartDocId: json['cartDocId'] as String?,
       uid: json['uid'] as String?,
       email: json['email'] as String?,
-      timestamp: json['timestamp'] as int?,
-      count: json['count'] as int?,
+      timestamp: (json['timestamp'] as num?)?.toInt(),
+      count: (json['count'] as num?)?.toInt(),
       product: json['product'] == null
           ? null
           : Product.fromJson(json['product'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_CartToJson(_$_Cart instance) => <String, dynamic>{
+Map<String, dynamic> _$$CartImplToJson(_$CartImpl instance) =>
+    <String, dynamic>{
       'cartDocId': instance.cartDocId,
       'uid': instance.uid,
       'email': instance.email,
