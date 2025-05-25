@@ -74,7 +74,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           ),
           DotsIndicator(
             dotsCount: 3,
-            position: bannerIndex,
+            position: bannerIndex.toDouble(),
           ),
           Container(
             color: Colors.white,
